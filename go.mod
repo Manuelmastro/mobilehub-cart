@@ -1,4 +1,4 @@
-module mobilehub-cart
+module github.com/Manuelmastro/mobilehub-cart
 
 go 1.22.5
 

@@ -5,10 +5,10 @@ import (
 	"log"
 	"net"
 
-	"mobilehub-cart/pkg/config"
-	"mobilehub-cart/pkg/db"
-	pb "mobilehub-cart/pkg/pb"
-	services "mobilehub-cart/pkg/services"
+	"github.com/Manuelmastro/mobilehub-cart/pkg/config"
+	"github.com/Manuelmastro/mobilehub-cart/pkg/db"
+	pb "github.com/Manuelmastro/mobilehub-cart/pkg/pb"
+	services "github.com/Manuelmastro/mobilehub-cart/pkg/services"
 
 	"google.golang.org/grpc"
 )

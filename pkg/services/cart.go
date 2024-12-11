@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"mobilehub-cart/pkg/db"
-	"mobilehub-cart/pkg/models"
-	"mobilehub-cart/pkg/pb"
+	"github.com/Manuelmastro/mobilehub-cart/pkg/db"
+	"github.com/Manuelmastro/mobilehub-cart/pkg/models"
+	"github.com/Manuelmastro/mobilehub-cart/pkg/pb"
 
 	productpb "github.com/Manuelmastro/mobilehub-product/pkg/pb"
 	"google.golang.org/grpc"

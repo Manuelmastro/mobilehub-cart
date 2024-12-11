@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package cart;
+
+option go_package = "./pkg/pb";
+
+// The Cart Service definition
+service CartService {
+    // Get the cart for a user
+    rpc GetCart(GetCartRequest) returns (GetCartResponse);
+
+    // Add a product to the user's cart
+    rpc AddToCart(AddToCartRequest) returns (AddToCartResponse);
+
+    // Remove a product from the user's cart
+    rpc RemoveFromCart(RemoveFromCartRequest) returns (RemoveFromCartResponse);
+
+    // Clear the cart for a user
+    rpc ClearCart(ClearCartRequest) returns (ClearCartResponse);
+}
+
+// Messages for GetCart
+message GetCartRequest {
+    string user_id = 1; // The ID of the user whose cart is being retrieved
+}
+
+message GetCartResponse {
+    repeated CartItem items = 1; // List of items in the cart
+}
+
+// Messages for AddToCart
+message AddToCartRequest {
+    string user_id = 1;    // The ID of the user adding to the cart
+    string product_id = 2; // The ID of the product to add
+    int32 quantity = 3;    // The quantity to add
+}
+
+message AddToCartResponse {
+    string message = 1; // Success message
+}
+
+// Messages for RemoveFromCart
+message RemoveFromCartRequest {
+    string user_id = 1;    // The ID of the user removing from the cart
+    string product_id = 2; // The ID of the product to remove
+}
+
+message RemoveFromCartResponse {
+    string message = 1; // Success message
+}
+
+// Cart item definition
+message CartItem {
+    string product_id = 1;  // The ID of the product
+    string product_name = 2; // The name of the product
+    float price = 3;        // The price of the product
+    int32 quantity = 4;     // The quantity of the product
+    float total_price = 5;  // Price * quantity
+}
+
+// Messages for ClearCart
+message ClearCartRequest {
+    string user_id = 1; // The ID of the user whose cart is being cleared
+}
+
+message ClearCartResponse {
+    string message = 1; // Success or error message
+}
